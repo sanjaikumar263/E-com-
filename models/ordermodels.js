@@ -69,11 +69,11 @@ export const getOrderById = async (req, res) => {
 
 export const updateOrderStaus = async (req,res) =>{
     try {
-        const { id, status } = req.body;
-        if (!id || !status) {
+        const { _id, status } = req.body;
+        if (!_id || !status) {
             return res.status(400).json({ message: "ID and status are required" });
         }
-        const updatedOrder = await Order.findByIdAndUpdate(id,  { status }, { new: true });
+        const updatedOrder = await Order.findByIdAndUpdate(_id,  { status }, { new: true });
         if (!updatedOrder) {
             return res.status(404).json({ message: "Order not found" });
         }       

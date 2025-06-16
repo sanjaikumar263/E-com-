@@ -9,16 +9,16 @@ router.post('/update', updateProduct);
 
 router.get('/getProducts',getProducts);
 
-router.get('/getProductById', getProductById);
+router.post('/getProductById', getProductById);
 
-router.delete('/deleteProduct', deleteProduct);
+router.post('/deleteProduct', deleteProduct);
 
 // Order
 router.post('/createOrder', createOrder); 
 
 router.get('/getOrders', getOrders);
 
-router.get('/getOrderById', getOrderById);
+router.post('/getOrderById', getOrderById);
 
 router.post('/UpdateOrderStatus',updateOrderStaus);
 

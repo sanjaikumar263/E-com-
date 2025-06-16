@@ -45,12 +45,12 @@ export const getProductById = async (req, res) => {
 
 export const updateProduct = async (req, res) => {
   try {
-    const { name, description, price ,id } = req.body;
+    const { name, description, price ,_id } = req.body;
     
-    if (!id || !name || !description || !price) {
+    if (!_id || !name || !description || !price) {
         return res.status(400).json({ message: "All fields are required" });
     }
-    const updatedProduct = await Product.findByIdAndUpdate(id, { name, description, price }, { new: true });
+    const updatedProduct = await Product.findByIdAndUpdate(_id, { name, description, price }, { new: true });
     
     if (!updatedProduct) {
       return res.status(404).json({ message: "Product not found" });
